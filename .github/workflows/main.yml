@@ -25,7 +25,8 @@ jobs:
           
       - name: Create comment with API
         run: |
-          gh api -X POST \
+          gh api \
+          --method POST \
             /repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
             -f body=' Comment from Api '
         env:
